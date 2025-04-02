@@ -16,7 +16,7 @@ services:
   app-foyer:
     depends_on:
       - mysqldb
-    image: syrine2002/tp-foyerr
+    image: syrine2002/tp-foyerr:0.0.1
     #build : ./
     restart: on-failure
     ports:
