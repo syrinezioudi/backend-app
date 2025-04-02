@@ -34,6 +34,7 @@ services:
     tty: true
 
   angular-app:
+    container_name: angular-app
     image: syrine2002/angular-app:0.0.1  # Reference your pre-built Angular app image
     ports:
       - "4200:80"  # Expose internal port 80 to external port 4200
