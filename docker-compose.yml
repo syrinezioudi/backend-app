@@ -13,11 +13,11 @@ services:
       - my-shared-network
     volumes:
       - db:/var/lib/mysql
+
   app-foyer:
     depends_on:
       - mysqldb
     image: syrine2002/tp-foyerr:0.0.1
-    #build : ./
     restart: on-failure
     ports:
       - 8083:8089
@@ -30,22 +30,20 @@ services:
         "spring.datasource.password" : "root",
         "spring.jpa.hibernate.ddl-auto" : "update"
       }'
-
-
     stdin_open: true
     tty: true
-    
+
   angular-app:
-    image: syrine2002/angular-app:0.0.1  # Use the pre-built Angular app image
+    image: syrine2002/angular-app:0.0.1  # Reference your pre-built Angular app image
     ports:
-      - "4200:80"  # Exposing internal port 80 to external port 4200
+      - "4200:80"  # Expose internal port 80 to external port 4200
     networks:
       - my-shared-network
-    restart: always  
+    restart: always
 
 volumes:
-  db :
+  db:
 
 networks:
   my-shared-network:
-    #external: true
+    driver: bridge
