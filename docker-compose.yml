@@ -34,17 +34,14 @@ services:
     tty: true
 
   angular-app:
-    container_name: angular-app
+    depends_on:
+      - app-foyer
     image: syrine2002/angular-app:0.0.1  # Reference your pre-built Angular app image
     ports:
       - "4200:80"  # Expose internal port 80 to external port 4200
     networks:
       - my-shared-network
     restart: always
-    environment:
-      - DEBUG=true  # Added to enable debugging
-    # Ensure the container is not failing silently
-    command: ["ng", "serve", "--host", "0.0.0.0"]  # Start Angular in a non-privileged mode
 
 volumes:
   db:
