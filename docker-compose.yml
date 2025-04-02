@@ -16,7 +16,7 @@ services:
   app-foyer:
     depends_on:
       - mysqldb
-    image: hibaxbelghith/foyer-app
+    image: syrine2002/tp-foyerr
     #build : ./
     restart: on-failure
     ports:
