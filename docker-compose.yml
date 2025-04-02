@@ -8,7 +8,7 @@ services:
       - MYSQL_ROOT_PASSWORD=root
       - MYSQL_DATABASE=tpfoyer_db
     ports:
-      - 3307:3307
+      - 3307:3306
     networks:
       - my-shared-network
     volumes:
@@ -16,11 +16,11 @@ services:
   app-foyer:
     depends_on:
       - mysqldb
-    image: hibaxbelghith/foyer-app
+    image: syrine2002/tp-foyerr:0.0.1
     #build : ./
     restart: on-failure
     ports:
-      - 8083:8081
+      - 8083:8089
     networks:
       - my-shared-network
     environment:
@@ -48,4 +48,4 @@ volumes:
 
 networks:
   my-shared-network:
-    external: true
+    #external: true
