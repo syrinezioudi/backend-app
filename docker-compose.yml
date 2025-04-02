@@ -20,7 +20,7 @@ services:
     #build : ./
     restart: on-failure
     ports:
-      - 8083:8081
+      - 8083:8089
     networks:
       - my-shared-network
     environment:
