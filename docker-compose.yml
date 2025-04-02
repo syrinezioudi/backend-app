@@ -34,6 +34,14 @@ services:
 
     stdin_open: true
     tty: true
+    
+  angular-app:
+    image: syrine2002/angular-app:0.0.1  # Use the pre-built Angular app image
+    ports:
+      - "4200:80"  # Exposing internal port 80 to external port 4200
+    networks:
+      - my-shared-network
+    restart: always  
 
 volumes:
   db :
