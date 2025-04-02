@@ -41,6 +41,10 @@ services:
     networks:
       - my-shared-network
     restart: always
+    environment:
+      - DEBUG=true  # Added to enable debugging
+    # Ensure the container is not failing silently
+    command: ["ng", "serve", "--host", "0.0.0.0"]  # Start Angular in a non-privileged mode
 
 volumes:
   db:
