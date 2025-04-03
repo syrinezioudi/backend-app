@@ -59,7 +59,7 @@ pipeline {
          stage('Dockerhub') {
             steps {
                 echo 'Push image to dockerhub ';
-                sh 'docker login -u syrine2002 -p cityofbones2002 ' ;
+                sh 'docker login -u  -p  ' ;
                 sh 'docker push syrine2002/tp-foyerr:0.0.1';
             }
         }
