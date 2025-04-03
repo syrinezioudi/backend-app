@@ -17,7 +17,7 @@ public class CorsConfig {
         CorsConfiguration config = new CorsConfiguration();
         config.setAllowCredentials(true);
         // Set the exact origin where your frontend (Angular) is running
-        config.addAllowedOrigin("http://localhost:4200"); // Allow only localhost:4200
+        config.addAllowedOrigin("*"); // Allow only localhost:4200
         config.setAllowedMethods(Collections.singletonList("*")); // Allow all HTTP methods (GET, POST, etc.)
         config.setAllowedHeaders(Collections.singletonList("*")); // Allow all headers
         source.registerCorsConfiguration("/**", config); // Apply CORS configuration to all endpoints
